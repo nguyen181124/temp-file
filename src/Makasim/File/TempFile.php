@@ -22,6 +22,10 @@ class TempFile extends \SplFileInfo
         self::registerRemoveTempFilesHandler();
         self::$tempFiles[$fileName] = $fileName;
     }
+    public static function getTempFiles()
+    {
+        return self::$tempFiles;
+    }
 
     /**
      * Persist file so that it would not be removed at the end of the script execution.
@@ -84,8 +88,8 @@ class TempFile extends \SplFileInfo
         }
 
         $tempFiles = &self::$tempFiles;
-        
-        register_shutdown_function(function() use (&$tempFiles) {
+
+        register_shutdown_function(function () use (&$tempFiles) {
             foreach ($tempFiles as $tempFile) {
                 if (file_exists($tempFile)) {
                     @unlink($tempFile);
