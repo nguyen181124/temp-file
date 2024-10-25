@@ -1,1 +1,0 @@
-{"version":1,"defects":{"TempFileTest::testConstruct":7,"TempFileTest::testPersist":7},"times":{"TempFileTest::testConstruct":0.009,"TempFileTest::testPersist":0.001,"TempFileTest::testGenerate":0.001,"TempFileTest::testFrom":0.001}}
